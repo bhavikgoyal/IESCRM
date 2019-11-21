@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="IESCRM_Mobiles.Views.AddNotes">
+    <ContentPage.Content>
+        <StackLayout x:Name="outerStack" Spacing="10" Padding="10" HorizontalOptions="FillAndExpand"  Orientation="Vertical">
+            <StackLayout   Padding="1">
+                <StackLayout Padding="5">
+
+                </StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="#ecd3d4" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Notes" TextColor="#3e403f" Grid.Row="0" Grid.Column="0"   HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="20"/>
+                        <ImageButton Source="LeftPics.png" x:Name="btnbacknotes" Clicked="Btnbacknotes1_Clicked" Margin="0,5,0,5" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" Grid.Column="0" ></ImageButton>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout  VerticalOptions="CenterAndExpand"    HorizontalOptions="FillAndExpand" >
+                <Frame Padding="40" BorderColor="#d82425">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Enter Admin Notes:"  VerticalTextAlignment="Center"   HorizontalTextAlignment ="Center"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                        <Entry  x:Name="txtenternote" BackgroundColor="White" TextColor="Black"  VerticalOptions="Start" Grid.Row="1" Grid.ColumnSpan="2" FontSize="17"  ></Entry>
+                    </Grid>
+                </Frame>
+                <StackLayout>
+                    <Frame BorderColor="#d82425" VerticalOptions="StartAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton  Source="save.png"  BackgroundColor="White" x:Name="btnsaveadmin" Clicked="Btnsavenote_Clicked" HeightRequest="50" HorizontalOptions="EndAndExpand"  Grid.Row="0" Grid.Column="0"  ></ImageButton>
+                            <ImageButton Source="clear.png" BackgroundColor="White" x:Name="btnnotecancel" Clicked="btnnotecancel_Clicked" HeightRequest="50" Grid.Row="0" HorizontalOptions="Start" Grid.Column="1" ></ImageButton>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

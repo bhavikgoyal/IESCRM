@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoMenuItem.Views.CustInfo">
+    <ContentPage.Content>
+        <StackLayout  Spacing="10" Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Vertical" BackgroundColor="White" >
+            <StackLayout Padding="10" >
+               
+                <StackLayout  x:Name="statgen" BackgroundColor="#d82425" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label  Text="Cutsomer information" x:Name="txtcustinfgo"  TextColor="White" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"></Label>
+                        <ImageButton Source="LeftIcon.png" x:Name="btnbackbutton" BackgroundColor="#d82425" Clicked="Btnbackbutton_Clicked_1"   WidthRequest="40" HeightRequest="30"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                        <ImageButton Source="searching.png" x:Name="searchingdata" WidthRequest="35" HeightRequest="30" BackgroundColor="#d82425"  HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                    </Grid>
+                </StackLayout>
+                <StackLayout  x:Name="searchstack" IsVisible="False" BackgroundColor="White" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="200*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Source="backbtn.png" x:Name="backinsearch" BackgroundColor="White" Clicked="backinsearch_Clicked"   WidthRequest="60" HeightRequest="60"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.Row="0"  Grid.Column="0" ></ImageButton>
+                        <SearchBar  Focused="searcust_Focused"   x:Name="searcust"  TextChanged="Searchcust" HorizontalTextAlignment="Start" VerticalOptions="Start" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  FontAttributes="Bold" FontSize="17"></SearchBar>
+                    </Grid>
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <ListView x:Name="lstCustomerInfo"
+                    HasUnevenRows="True" BackgroundColor="White">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45" />
+                                            <RowDefinition Height="45" />
+                                            <RowDefinition Height="45" />
+                                            <RowDefinition Height="5" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                                            <ColumnDefinition Width="240*"></ColumnDefinition>
+                                            <ColumnDefinition Width="80*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Image="company.png" Margin="0,11,0,0" BackgroundColor="#fff6f7" Grid.Row="0" Grid.Column="0"  HorizontalOptions="Start"/>
+                                        <Button Image="callAnswer.png"  Margin="0,2,0,0" BackgroundColor="#fff6f7" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Start"/>
+                                        <Button Image="envelope.png"  Margin="0,3,0,0" BackgroundColor="#fff6f7" Grid.Row="2" Grid.Column="0"  HorizontalOptions="Start"/>
+                                        <Button Image="viewbutton.png"  x:Name="btnviewclicl" ClassId="{Binding Customerid}"  Clicked="btnviewclicl" BackgroundColor="#fff6f7" Grid.Row="1" Grid.Column="2"  HorizontalOptions="StartAndExpand" VerticalOptions="Start"/>
+                                        <Label Text="{Binding CustomerName}" TextColor="#464c4c" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="13"/>
+                                        <Label Text="{Binding Phone_1}" TextColor="#464c4c" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="13"/>
+                                        <Label Text="{Binding Email}" TextColor="#464c4c" Grid.Row="2" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="13"/>
+                                        <BoxView Grid.Row="3" HeightRequest="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="3"  Color="#fc8c8b" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout BackgroundColor="White" 
+                            HeightRequest="130"
+                        x:Name="activity"
+                            WidthRequest="450" 
+                              HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                        Margin="50">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10">
+                    <ActivityIndicator IsRunning="True" IsVisible="True" IsEnabled="True" Color="#d82425">
+                    </ActivityIndicator>
+                    <Label Text="Please Wait" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

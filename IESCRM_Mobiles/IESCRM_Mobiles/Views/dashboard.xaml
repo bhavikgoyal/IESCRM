@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoMenuItem.Views.dashboard"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout x:Name="outerStack"   HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"  Orientation="Vertical" >
+
+            <StackLayout x:Name="statgen" Padding="10" VerticalOptions="StartAndExpand">
+                <Grid Grid.Row="0" BackgroundColor="#d82425" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Main Menu"  TextColor="White" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="23"/>
+                            <ImageButton Source="logout.png"  x:Name="btnlogout"  WidthRequest="30" BackgroundColor="#d82425" HeightRequest="30"  HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                        </Grid>
+                        <Grid Grid.Row="1" >
+                            <Label x:Name="user" Grid.Column="0"  Grid.Row="0" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="EndAndExpand" FontSize="18"  TextColor="Red" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <StackLayout Grid.Column="0" VerticalOptions="EndAndExpand">
+                            <Button x:Name="Circleinfo" WidthRequest="200" HeightRequest="200"  Image="customerinfo.png"  BackgroundColor="White"  HorizontalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="0">
+                                    <StackLayout Grid.Column="0" VerticalOptions="StartAndExpand">
+                                        <Label Text="Customer" TextColor="Black"  HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20"/>
+                                        <Label Text="Information"  TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold"  FontSize="20"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="0">
+                                    <StackLayout Grid.Column="0" VerticalOptions="StartAndExpand">
+                            <Button x:Name="CircleWork" WidthRequest="200" HeightRequest="200" BackgroundColor="White"  Image="workorder.png"   HorizontalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="0">
+                                    <StackLayout Grid.Column="0" VerticalOptions="StartAndExpand">
+                                        <Label Text="Work" TextColor="Black"  HorizontalTextAlignment="Center"  FontSize="20" FontAttributes="Bold"/>
+                                        <Label Text="Orders" TextColor="Black" HorizontalTextAlignment="Center"  FontSize="20" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

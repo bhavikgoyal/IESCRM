@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoMenuItem.login"           
+             BackgroundColor="#ecd3d4">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="outerStack" Spacing="10" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+                <StackLayout>
+                    <StackLayout Grid.Row="0">
+                        <Image  WidthRequest="150" Source="crm.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1">
+                        <Label  Text="IES CRM SYSTEM" FontAttributes="Bold"  FontSize="40" TextColor="#d82425" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" ></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <ScrollView>
+                    <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250*" />
+                                <ColumnDefinition Width="40*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout   Grid.Row="0" Grid.Column="0">
+                                <Label  Text="USER NAME" TextColor="#d82425" FontAttributes="Bold"  FontSize="20"></Label>
+                                <Entry x:Name="txtemail"    TextColor="Black" Keyboard="Email"   BackgroundColor="#ecd3d4"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1">
+                                <Image  Source="us.png"  WidthRequest="30" VerticalOptions="EndAndExpand" HorizontalOptions="End"></Image>
+                            </StackLayout>
+                            <StackLayout   Grid.Row="1" Grid.Column="0">
+                                <Label  Text="PASSWORD"  TextColor="#d82425" FontAttributes="Bold"  FontSize="20" ></Label>
+                                <Entry  Grid.Column="1" x:Name="txtpass" TextColor="Black" BackgroundColor="#ecd3d4" IsPassword="True" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="1">
+                                <Image   Source="locked.png" WidthRequest="30" VerticalOptions="EndAndExpand" HorizontalOptions="End"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+                                <Button x:Name="btnlogin" Text="Login" WidthRequest="140" TextColor="White" FontAttributes="Bold" FontSize="20"  HorizontalOptions="FillAndExpand"  BackgroundColor="#d82425" BorderRadius="10"></Button>
+                            </StackLayout>
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

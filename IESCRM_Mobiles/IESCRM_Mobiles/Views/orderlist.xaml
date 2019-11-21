@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="IESCRM_Mobiles.Views.orderlist">
+    <ContentPage.Content>
+        <StackLayout  Spacing="10" Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Vertical" BackgroundColor="White" >
+
+                <StackLayout Padding="8" >
+                    <StackLayout   x:Name="statgeninf" BackgroundColor="#d82425" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Work order List" x:Name="workinfoes" TextColor="White" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="20"></Label>
+                        <ImageButton Source="LeftIcon.png" x:Name="bckworkbtn" Clicked="Bckworkbtn_Clicked" BackgroundColor="#d82425"  WidthRequest="40" HeightRequest="30"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0"></ImageButton>
+                            <ImageButton Source="searching.png" x:Name="searchingname" Padding="5" WidthRequest="40" HeightRequest="40" BackgroundColor="#d82425"  HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout  x:Name="searc"  IsVisible="False" BackgroundColor="White" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="200*"/>
+                            </Grid.ColumnDefinitions>
+                        <ImageButton Source="backbtn.png" x:Name="backinsea" BackgroundColor="White" Clicked="Backinsea_Clicked"   WidthRequest="40" HeightRequest="40"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Grid.Row="0"  Grid.Column="0" ></ImageButton>
+                        <SearchBar  Focused="Searcust_Focused"    x:Name="searcb"  TextChanged="Searchc" HorizontalTextAlignment="Start" VerticalOptions="Start" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  FontAttributes="Bold" FontSize="17"></SearchBar>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <ListView x:Name="WorkOrderList"
+                    HasUnevenRows="True" BackgroundColor="White">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="55" />
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="3" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40*"></ColumnDefinition>
+                                                <ColumnDefinition Width="240*"></ColumnDefinition>
+                                                <ColumnDefinition Width="250*"></ColumnDefinition>
+                                                <ColumnDefinition Width="90*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Button Image="sorticon.png" Margin="0,11,0,0" BackgroundColor="#fff6f7" Grid.Row="0" Grid.Column="0"  HorizontalOptions="Start"/>
+                                            <Button Image="usersilhouette.png"  Margin="0,2,0,0" BackgroundColor="#fff6f7" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Start"/>
+                                            <Button Image="calenders.png"  Margin="0,3,0,0" BackgroundColor="#fff6f7" Grid.Row="2" Grid.Column="0"  HorizontalOptions="Start"/>
+                                            <Button Image="text.png"  Margin="0,3,0,0" BackgroundColor="#fff6f7" Grid.Row="3" Grid.Column="0"  HorizontalOptions="Start"/>
+                                            <Button Image="manufacturing.png"  Margin="0,3,0,0" BackgroundColor="#fff6f7" Grid.Row="4" Grid.Column="0"  HorizontalOptions="Start"/>
+                                            <Button Image="twentyfourhours.png"  Margin="0,3,0,0" BackgroundColor="#fff6f7" Grid.Row="5" Grid.Column="0"  HorizontalOptions="Start"/>
+                                        <Button Image="viewbutton.png"  x:Name="btnviewcliclk1" ClassId="{Binding JobOrderNumber}" Clicked="Bckworkbtn_Clicked1"   BackgroundColor="#fff6f7" Grid.Row="2" Grid.Column="3"  HorizontalOptions="StartAndExpand" VerticalOptions="Start"/>
+                                       
+                                        <Label Text="Order #:" TextColor="#464c4c" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                        <Label Text="Customer:" TextColor="#464c4c" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                        <Label Text="Order Dt:" TextColor="#464c4c" Grid.Row="2" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                        <Label Text="Prod Type:" TextColor="#464c4c" Grid.Row="3" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                        <Label Text="Manuf:" TextColor="#464c4c" Grid.Row="4" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                        <Label Text="Model #:" TextColor="#464c4c" Grid.Row="5" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                           
+                                            <Label Text="{Binding JobOrderNumber}" TextColor="#464c4c" Grid.Row="0" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <Label Text="{Binding CustomerName}" TextColor="#464c4c" Grid.Row="1" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <Label Text="{Binding JobOrderDate}" TextColor="#464c4c" Grid.Row="2" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <Label Text="{Binding ProductName}" TextColor="#464c4c" Grid.Row="3" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <Label Text="{Binding Manufacturer}" TextColor="#464c4c" Grid.Row="4" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <Label Text="{Binding ModelNumber}" TextColor="#464c4c" Grid.Row="5" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="14"/>
+                                            <BoxView Grid.Row="6" HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5"  Color="#fc8c8b" />
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+       
+            <StackLayout BackgroundColor="White" 
+                            HeightRequest="130"
+                        x:Name="activity"
+                            WidthRequest="450" 
+                              HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                        Margin="50">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10">
+                    <ActivityIndicator IsRunning="True" IsVisible="True" IsEnabled="True" Color="#d82425">
+                    </ActivityIndicator>
+                    <Label Text="Please Wait" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

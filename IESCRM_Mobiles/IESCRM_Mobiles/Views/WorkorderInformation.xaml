@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="DemoMenuItem.Views.WorkorderInformation">
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="Center" Padding="8" VerticalOptions="Center">
+            
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+                        <StackLayout BackgroundColor="#ecd3d4" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Work Order Details" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="LeftPics.png" Clicked="Butbackbutton_Clicked_1"   Margin="0,5,0,5" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="btnwork" Source= "d.png" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabworkordergenral" IsVisible="True" HorizontalOptions="FillAndExpand" >
+                        <Frame>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                  
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Customer:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtcusto"  Grid.Row="0" Grid.Column="1" FontSize="17"></Label>
+                                
+                                <Label Text="Prod Type:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtadd"  Grid.Row="1" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Manuf:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtmanu"  Grid.Row="2" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Model #:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="3" Grid.Column="0"  FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtmo"  Grid.Row="3" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Ser #:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="4" Grid.Column="0"  FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtserial"   Grid.Row="4" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Test Unit:"  VerticalTextAlignment="Start"  HorizontalTextAlignment ="Start"  Grid.Row="5" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtunitattach"  HorizontalOptions="Start" Grid.Row="5" Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" VerticalOptions="Start" HorizontalOptions="End"   Grid.Row="5" Grid.Column="2"></Image>
+
+                                <Label Text="Cust PO:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="6" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtcu" Grid.Row="6" Grid.Column="1"  FontSize="17"></Label>
+
+                                <Label Text="Cust Ref:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="7" Grid.Column="0"  FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtcustref" Grid.Row="7" Grid.Column="1" FontSize="17"></Label>
+
+                                <!--<Label Text="Maxico Job No.:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="7" Grid.Column="0"  FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="maxijobno" Grid.Row="7" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Sync To Maxico:"  VerticalTextAlignment="Start"  HorizontalTextAlignment ="Start"  Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtprovi"    Grid.Row="8" Grid.Column="1" FontSize="17"  ></Label>-->
+
+                                <Label Text="Sale Rp:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="salerepname"  Grid.Row="8" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" VerticalOptions="Start" HorizontalOptions="End"   Grid.Row="8" Grid.Column="2"></Image>
+
+                                <Label Text="Rep Cd:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="9" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtrepcode"  Grid.Row="9" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Type:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="10" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtjobtype" Grid.Row="10" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" VerticalOptions="Start" HorizontalOptions="End"   Grid.Row="10" Grid.Column="2"></Image>
+
+                                <Label Text="Status:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="11" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtjobstatus"  Grid.Row="11" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" VerticalOptions="Start" HorizontalOptions="End"   Grid.Row="11" Grid.Column="2"></Image>
+
+                                <Label Text="Dt Rcvd:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="12" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtdaterecive"   Grid.Row="12" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Quote Dt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="13" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtdatequote"   Grid.Row="13" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text=" Cons. Inv:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="14" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtconsignment"  Grid.Row="14" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="App Dt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="15" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtdateapproved"  Grid.Row="15" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Cons. Dt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="16" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtdateConsignment"  Grid.Row="16" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Inv Dt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="17" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtdateinvoice"  Grid.Row="17" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Inv #:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="18" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label  x:Name="txtInvoice"  Grid.Row="18" HorizontalOptions="Start" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Shp. Dt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="19" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtshipped"  Grid.Row="19" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Ins/Flt:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="20" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtInstruction"  Grid.Row="20" Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="90 Days View Notes:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start" FontAttributes="Bold" Grid.Row="21" Grid.Column="0"  FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="txtviewnotes"  Grid.Row="21" Grid.Column="1" FontSize="17"></Label>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+
+                        <StackLayout  BackgroundColor="#ecd3d4" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabcomminsiondetail1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Commission Details"  TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="moneybagwithdollarsymbol.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="commissiond" Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabcommissiondeatils"  IsVisible="False" HorizontalOptions="FillAndExpand" >
+                        <Frame>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Major:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="majorreq" Grid.Row="0" Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="0" Grid.Column="2"></Image>
+
+                                <Label Text="Com Based Value:"  VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="commvalue" Grid.Row="1"  Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Commission %:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="commissionper" Grid.Row="2"  Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Comm Amount:" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="commamount"  Grid.Row="3"  Grid.Column="1" FontSize="17"></Label>
+
+                                <Label Text="Pmnt Rcvd :" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="payrec"  Grid.Row="4"  Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="downar.png" VerticalOptions="Start" HorizontalOptions="End"  Grid.Row="4" Grid.Column="2"></Image>
+
+                                <Label Text="Pmnt Dt:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="5" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="paydate"  Grid.Row="5"  Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="calenders.png" VerticalOptions="Start" HorizontalOptions="End"  Grid.Row="5" Grid.Column="2"></Image>
+
+                                <Label Text="Comm Paid :" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="6" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="commpaid" Grid.Row="6" Grid.Column="1" FontSize="16"></Label>
+
+                                <Label Text="Paid Dt:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="7" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="commpaiddate" Grid.Row="7"  Grid.Column="1" FontSize="17"></Label>
+                                <Image Source="calenders.png" VerticalOptions="Start" HorizontalOptions="End"  Grid.Row="7" Grid.Column="2"></Image>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+                        <StackLayout  BackgroundColor="#ecd3d4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabpricing1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Pricing" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="discountstickerwithpercentage.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="btpricing"  Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabpricing" IsVisible="False"  HorizontalOptions="FillAndExpand" >
+                        <Frame Padding="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="45" />
+ 
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="New:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="cost" Grid.Row="0"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Dstb. disc%:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="disrate" Grid.Row="1" Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Rush Fee:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="rushfee" Grid.Row="2"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Add Disc:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="discount" Grid.Row="3" Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text=" OutSource:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="outsourceprice" Grid.Row="4"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Repair Chrg:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="5" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="repaircharge" Grid.Row="5"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Dstb. disc Amt:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="6" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="disdiscount" Grid.Row="6" Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text=" Addtn Chrg:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="7" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="addcharge"  Grid.Row="7"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label Text="Addtn Disc:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="adddiscamount" Grid.Row="8"  Grid.Column="1" FontSize="18"></Label>
+
+                                <Label  Text="Quote Price:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="9" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="qouteprice" Grid.Row="9"  Grid.Column="1" FontSize="18"></Label>
+
+                                <!--<Label Text="Total Expenses:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="10" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="expences" TextColor="Blue" Grid.Row="10"  Grid.Column="2" FontSize="18"></Label>
+
+                                <Label Text="Gain/Loss:" VerticalTextAlignment="Start" HorizontalTextAlignment ="Start"  Grid.Row="11" Grid.Column="0" FontAttributes="Bold" FontSize= "16" TextColor="DimGray"></Label>
+                                <Label x:Name="profitloss"  Grid.Row="11" TextColor="Green" Grid.Column="2" FontSize="18"></Label>-->
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+                        <StackLayout  BackgroundColor="#ecd3d4" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabjobnots1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Job Notes" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="notepad.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="btjobnot"  Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabjobnotes" IsVisible="False"  HorizontalOptions="FillAndExpand" >
+                        <ScrollView Orientation="Vertical">
+                            <ListView  HasUnevenRows="True" x:Name="jobsnote" BackgroundColor="White" HeightRequest="300">
+                                <ListView.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="2"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Text=" Dated " FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="0" Grid.Row="0" />
+                                        <Label  Text="Notes" FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="1" Grid.Row="0" />
+                                        <Label  Text="Entered By" FontSize="13" FontAttributes="Bold"  TextColor="Black" Grid.Column="2" Grid.Row="0" />
+                                        <BoxView BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="3" />
+
+                                    </Grid>
+                                </ListView.Header>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label  Grid.Column="0" Grid.Row="0" FontSize="10"  TextColor="Black"   Text="{Binding JobNotesDateTime}"/>
+                                                <Label  Grid.Column="1" Grid.Row="0" FontSize="10" TextColor="Black"    Text="{Binding JobNotes}"/>
+                                                <Label  Grid.Column="2" Grid.Row="0" FontSize="11" TextColor="Black"    Text="{Binding EnteredBy}"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+                    
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+                        <StackLayout  BackgroundColor="#ecd3d4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabadminnotes1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Admin Notes" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="file.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="btadminnot"  Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabadminnotes" IsVisible="False"  HorizontalOptions="FillAndExpand" >
+                        <ScrollView Orientation="Vertical">
+                            <ListView  HasUnevenRows="True" x:Name="adminnotes" BackgroundColor="White" HeightRequest="300">
+                                <ListView.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="2"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="2"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ImageButton Source="addnewnotes2.png" x:Name="btnNotesclick" BackgroundColor="White" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="0" Grid.Column="2"  ></ImageButton>
+                                        <Label  Text=" Dated " FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="0" Grid.Row="2" />
+                                        <Label  Text="Notes" FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="1" Grid.Row="2" />
+                                        <Label  Text="Entered By" FontSize="13" FontAttributes="Bold"  TextColor="Black" Grid.Column="2" Grid.Row="2" />
+                                        <BoxView BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="3" />
+                                        <BoxView BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3" />
+                                     
+                                    </Grid>
+                                </ListView.Header>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label  Grid.Column="0" Grid.Row="0" FontSize="10"  TextColor="Black"   Text="{Binding AdminNotesDateTime}"/>
+                                                <Label  Grid.Column="1" Grid.Row="0" FontSize="10" TextColor="Black"    Text="{Binding AdminNotes}"/>
+                                                <Label  Grid.Column="2" Grid.Row="0" FontSize="11" TextColor="Black"    Text="{Binding EnteredBy}"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+                        <StackLayout  BackgroundColor="#ecd3d4" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabtecnicians1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Technicians" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="technician.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="bttechni"  Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabtechnicians" IsVisible="False"  HorizontalOptions="FillAndExpand" >
+                        <ScrollView Orientation="Vertical">
+                            <ListView  HasUnevenRows="True" x:Name="technicians" BackgroundColor="White" HeightRequest="300">
+                                <ListView.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="2"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Text="Assigned Date: " FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="0" Grid.Row="0" />
+                                        <Label  Text="Technician Name:" FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="1" Grid.Row="0" />
+                                        <Label  Text="Is Active:" FontSize="13" FontAttributes="Bold"  TextColor="Black" Grid.Column="2" Grid.Row="0" />
+                                        <BoxView BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="3" />
+                                    </Grid>
+                                </ListView.Header>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label  Grid.Column="0" Grid.Row="0" FontSize="13"  TextColor="Black"   Text="{Binding AssignedDate}"/>
+                                                <Label  Grid.Column="1" Grid.Row="0" FontSize="13" TextColor="Black"    Text="{Binding UserFirstName}"/>
+                                                <Label  Grid.Column="2" Grid.Row="0" FontSize="13" TextColor="Black"    Text="{Binding IsActiveTechnician}"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+                   
+                    <StackLayout BackgroundColor="#d82425" Padding="1">
+
+                        <StackLayout  BackgroundColor="#ecd3d4" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tabshippingadress1"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Shipping Address" FontAttributes="None" TextColor="#3e403f" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" FontSize="19"/>
+                                <ImageButton Source="delivery.png" BackgroundColor="#ecd3d4" WidthRequest="30" HeightRequest="30"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="0" ></ImageButton>
+                                <ImageButton x:Name="btshipw" Source= "r.png" WidthRequest="20"  HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.ColumnSpan="2"  Grid.Column="1" ></ImageButton>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="FillAndExpand" x:Name="tabshippingadress" IsVisible="False"  HorizontalOptions="FillAndExpand" >
+                       
+                        <ScrollView Orientation="Vertical">
+                            <ListView  HasUnevenRows="True" x:Name="tabshippingadds" BackgroundColor="White" HeightRequest="300">
+                                <ListView.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="2"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40*"/>
+                                            <ColumnDefinition Width="25*"/>
+                                            <ColumnDefinition Width="20*"/>
+                                            <ColumnDefinition Width="20*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label  Text="Contact Name: " FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="0" Grid.Row="0" />
+                                        <Label  Text="Address:" FontSize="13" FontAttributes="Bold" TextColor="Black" Grid.Column="1" Grid.Row="0" />
+                                        <Label  Text="City:" FontSize="13" FontAttributes="Bold"  TextColor="Black" Grid.Column="2" Grid.Row="0" />
+                                        <Label  Text="Province:" FontSize="13" FontAttributes="Bold"  TextColor="Black" Grid.Column="3" Grid.Row="0" />
+                                        <BoxView BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="4" />
+                                    </Grid>
+                                </ListView.Header>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40*" />
+                                                    <ColumnDefinition Width="25*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label  Grid.Column="0" Grid.Row="0" FontSize="13"  TextColor="Black"   Text="{Binding ContactName}"/>
+                                                <Label  Grid.Column="1" Grid.Row="0" FontSize="13" TextColor="Black"    Text="{Binding Address}"/>
+                                                <Label  Grid.Column="2" Grid.Row="0" FontSize="13" TextColor="Black"    Text="{Binding City}"/>
+                                                <Label  Grid.Column="3" Grid.Row="0" FontSize="13" TextColor="Black"    Text="{Binding ProvinceName}"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+                                     
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
